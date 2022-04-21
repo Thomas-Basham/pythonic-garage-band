@@ -8,7 +8,8 @@ from pythonic_garage_band.band import (
     Drummer
 )
 
-@pytest.mark.skip("todo")
+
+# @pytest.mark.skip("todo")
 def test_guitarist_str():
     joan = Guitarist("Joan Jett")
     actual = str(joan)
