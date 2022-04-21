@@ -9,7 +9,6 @@ from pythonic_garage_band.band import (
 )
 
 
-# @pytest.mark.skip("todo")
 def test_guitarist_str():
     joan = Guitarist("Joan Jett")
     actual = str(joan)
@@ -17,7 +16,6 @@ def test_guitarist_str():
     assert actual == expected
 
 
-# @pytest.mark.skip("todo")
 def test_guitarist_repr():
     joan = Guitarist("Joan Jett")
     actual = repr(joan)
@@ -32,7 +30,6 @@ def test_drummer_str():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_drummer_repr():
     sheila = Drummer("Sheila E.")
     actual = repr(sheila)
@@ -40,7 +37,6 @@ def test_drummer_repr():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_bassist_str():
     meshell = Bassist("Meshell Ndegeocello")
     actual = str(meshell)
@@ -48,7 +44,6 @@ def test_bassist_str():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_bassist_repr():
     meshell = Bassist("Meshell Ndegeocello")
     actual = repr(meshell)
@@ -56,7 +51,6 @@ def test_bassist_repr():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_band_name():
     nirvana = Band("Nirvana", [])
 
