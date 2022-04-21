@@ -3,8 +3,9 @@ from abc import ABC
 
 
 class Band(ABC):
-    def __init__(self, name="unknown"):
+    def __init__(self, name="unknown", band_name=[]):
         self.name = name
+        Band.name = band_name
 
 
 class Musician(Band):
