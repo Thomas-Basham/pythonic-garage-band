@@ -5,8 +5,8 @@ from pythonic_garage_band.band import (
     Musician,
     Guitarist,
     Bassist,
-    Dru
-
+    Drummer
+)
 
 @pytest.mark.skip("todo")
 def test_guitarist_str():
