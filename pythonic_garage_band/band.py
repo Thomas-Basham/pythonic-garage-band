@@ -3,12 +3,14 @@ from abc import ABC
 
 
 class Band(ABC):
-    def __init__(self, name="unknown", band_name=[]):
+    def __init__(self, name="unknown", band_name=[], instruments=[], members = []):
         self.name = name
         Band.name = band_name
+        Band.instruments = instruments
+        Band.members = members
 
-    @abc.abstractmethod
-    def get_instrument(self):
+    @classmethod
+    def get_instrument(cls):
         pass
 
 
