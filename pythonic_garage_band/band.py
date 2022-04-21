@@ -5,7 +5,6 @@ from abc import ABC
 class Band(ABC):
     def __init__(self, name="unknown"):
         self.name = name
-        Band.name = name
 
 
 class Musician(Band):
@@ -17,16 +16,22 @@ class Guitarist(Band):
         return f"My name is {self.name} and I play guitar"
 
     def __repr__(self):
-        return "Guitarist instance. Name = Joan Jett"
-
-
-
-print((Guitarist("Joan Jett")))
+        return f"Guitarist instance. Name = {self.name}"
 
 
 class Bassist(Band):
-    pass
+    def __str__(self):
+        return f"My name is {self.name} and I play bass"
+
+    def __repr__(self):
+        return f"Bassist instance. Name = {self.name}"
 
 
 class Drummer(Band):
-    pass
+    def __str__(self):
+        return f"My name is {self.name} and I play drums"
+
+    def __repr__(self):
+        return f"Drummer instance. Name = {self.name}"
+
+
