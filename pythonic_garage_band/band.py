@@ -7,6 +7,10 @@ class Band(ABC):
         self.name = name
         Band.name = band_name
 
+    @abc.abstractmethod
+    def get_instrument(self):
+        pass
+
 
 class Musician(Band):
     pass
@@ -19,6 +23,9 @@ class Guitarist(Band):
     def __repr__(self):
         return f"Guitarist instance. Name = {self.name}"
 
+    def get_instrument(self):
+        return "guitar"
+
 
 class Bassist(Band):
     def __str__(self):
@@ -27,6 +34,9 @@ class Bassist(Band):
     def __repr__(self):
         return f"Bassist instance. Name = {self.name}"
 
+    def get_instrument(self):
+        return "bass"
+
 
 class Drummer(Band):
     def __str__(self):
@@ -34,5 +44,9 @@ class Drummer(Band):
 
     def __repr__(self):
         return f"Drummer instance. Name = {self.name}"
+
+    def get_instrument(self):
+        return "drums"
+
 
 
