@@ -22,7 +22,7 @@ class Band:
     def play_solos(self):
         solos = []
         for members in self.members:
-            solos.append(members.play_solo(self))
+            solos.append(members.play_solo())
         return solos
 
 
@@ -41,7 +41,6 @@ class Guitarist(Musician):
     def get_instrument(self):
         return "guitar"
 
-    @staticmethod
     def play_solo(self):
         return "face melting guitar solo"
 
@@ -56,7 +55,7 @@ class Bassist(Musician):
     def get_instrument(self):
         return "bass"
 
-    @staticmethod
+
     def play_solo(self):
         return "bom bom buh bom"
 
@@ -71,6 +70,6 @@ class Drummer(Musician):
     def get_instrument(self):
         return "drums"
 
-    @staticmethod
+
     def play_solo(self):
         return "rattle boom crash"
