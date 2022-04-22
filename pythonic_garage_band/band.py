@@ -1,24 +1,37 @@
-import abc
-from abc import ABC
 
 
-class Band(ABC):
-    def __init__(self, name="unknown", band_name=[], instruments=[], members = []):
+class Band:
+    instances = []
+
+    def __init__(self, name, members):
         self.name = name
-        Band.name = band_name
-        Band.instruments = instruments
-        Band.members = members
+        self.members = members
+        self.instances.append(self)
 
     @classmethod
     def get_instrument(cls):
         pass
 
+    def to_list(self):
+        pass
+
+    @classmethod
+    def to_list(cls):
+        return cls.instances
+
+    def play_solos(self):
+        solos = []
+        for members in self.members:
+            solos.append(members.play_solo(self))
+        return solos
+
 
 class Musician(Band):
-    pass
+    def __init__(self, name):
+        self.name = name
 
 
-class Guitarist(Band):
+class Guitarist(Musician):
     def __str__(self):
         return f"My name is {self.name} and I play guitar"
 
@@ -28,8 +41,12 @@ class Guitarist(Band):
     def get_instrument(self):
         return "guitar"
 
+    @staticmethod
+    def play_solo(self):
+        return "face melting guitar solo"
 
-class Bassist(Band):
+
+class Bassist(Musician):
     def __str__(self):
         return f"My name is {self.name} and I play bass"
 
@@ -39,8 +56,12 @@ class Bassist(Band):
     def get_instrument(self):
         return "bass"
 
+    @staticmethod
+    def play_solo(self):
+        return "bom bom buh bom"
 
-class Drummer(Band):
+
+class Drummer(Musician):
     def __str__(self):
         return f"My name is {self.name} and I play drums"
 
@@ -50,5 +71,6 @@ class Drummer(Band):
     def get_instrument(self):
         return "drums"
 
-
-
+    @staticmethod
+    def play_solo(self):
+        return "rattle boom crash"
